@@ -4,7 +4,7 @@ window.onload = function(){
     var stopBtn = document.querySelector('input[type="button"][data-action="stop"]');
     var images = document.querySelectorAll('#gallery .photos img');
     var delayInput = document.querySelector('#delay');
-    var delay = 3000;
+    var delay = parseInt(delayInput.value) * 1000;
     var i = 0;
     
     var action = 'stop';
