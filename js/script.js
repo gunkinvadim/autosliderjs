@@ -1,6 +1,7 @@
 window.onload = function(){
 
     var buttons = document.querySelectorAll('#gallery input[type="button"]');
+    var stopBtn = document.querySelector('input[type="button"][data-action="stop"]');
     var images = document.querySelectorAll('#gallery .photos img');
     var delayInput = document.querySelector('#delay');
     var delay = 3000;
@@ -29,20 +30,20 @@ window.onload = function(){
             } else if (buttonAction == 'prev-auto') {
                 action = 'autoprev';
                 prev(autoPrev);
-                var autoPrev = setInterval(function() {prev(autoPrev);}, delay);
+                var autoPrev = setInterval(function() {prev(autoPrev, autoNext);}, delay);
         
                 buttonsDisable();
                 document.querySelector('input[type="button"][data-action="next-auto"]').disabled = false;
-                document.querySelector('input[type="button"][data-action="stop"]').disabled = false;
+                stopBtn.disabled = false;
 
             } else if (buttonAction == 'next-auto') {
                 action = 'autonext';
                 next(autoNext);
-                var autoNext = setInterval(function() {next(autoNext);}, delay);
+                var autoNext = setInterval(function() {next(autoPrev, autoNext);}, delay);
         
                 buttonsDisable();
                 document.querySelector('input[type="button"][data-action="prev-auto"]').disabled = false;
-                document.querySelector('input[type="button"][data-action="stop"]').disabled = false;
+                stopBtn.disabled = false;
 
             } else if (buttonAction == 'stop') {
                 action = 'stop';
@@ -94,7 +95,7 @@ window.onload = function(){
         clearInterval(autoNext);
         
         buttonsEnable();
-        document.querySelector('input[type="button"][data-action="stop"]').disabled = true;
+        stopBtn.disabled = true;
     }
 
     function buttonsDisable() {
