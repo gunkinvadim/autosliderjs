@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div id="gallery">
+        <div class="gallery">
             <div class="photos">
                 <img src="img/Chrysanthemum.jpg" class="showed" alt="">
                 <img src="img/Desert.jpg" alt="">
@@ -18,18 +18,18 @@
                 <img src="img/Tulips.jpg" alt="">
             </div>
             <div class="input-container">
-                <input type="button" value="Назад" data-action="prev">
-                <input type="button" value="Вперёд" data-action="next">
+                <input class="button-action" type="button" value="Назад" data-action="prev">
+                <input class="button-action" type="button" value="Вперёд" data-action="next">
             </div>
             <div class="input-container">
-                <input type="button" value="Слайдшоу назад" data-action="prev-auto">
-                <input type="button" value="Слайдшоу вперёд" data-action="next-auto">
+                <input class="button-action" type="button" value="Слайдшоу назад" data-action="prev-auto">
+                <input class="button-action" type="button" value="Слайдшоу вперёд" data-action="next-auto">
             </div>
             <div class="input-container">
-                <label for="delay">Задержка слайдов, секунд: </label><input id="delay" type="number" value="3">
+                <label for="delay">Задержка слайдов, секунд: </label><input id="delay" class="delay-input" type="number" value="3">
             </div>
             <div class="input-container">
-                <input type="button" value="Остановить слайдшоу" data-action="stop" disabled>
+                <input class="button-action" type="button" value="Остановить слайдшоу" data-action="stop" disabled>
             </div>
         </div>
         <script src="js/script.js"></script>

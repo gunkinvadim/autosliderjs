@@ -3,29 +3,63 @@ html, body, ul, li{
     padding: 0;
 }
 
-#gallery{
+.gallery{
     width: 860px;
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     text-align: center;
 }
 
-#gallery .photos{
+.gallery .photos{
     position: relative;
     height: 670px;
 }
 
-#gallery .photos img{
+.gallery .photos img{
     width: 100%;
     position: absolute;
     left: 0;
     opacity: 0;
     transition: opacity 1s;
+    border-radius: 5px;
 }
 
-#gallery .photos img.showed{
+.gallery .photos img.showed{
     opacity: 1;
 }
 
 .input-container {
-    margin-top: 30px
+    margin-top: 20px
+}
+
+.button-action {
+    border: none;
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.button-action:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+    cursor: pointer;
+}
+
+.button-action[disabled] {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.button-action[disabled]:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+    cursor: auto;
+}
+
+.delay-input {
+        width: 60px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        padding: 3px;
 }

@@ -1,9 +1,9 @@
 window.onload = function(){
 
-    var buttons = document.querySelectorAll('#gallery input[type="button"]');
-    var stopBtn = document.querySelector('input[type="button"][data-action="stop"]');
-    var images = document.querySelectorAll('#gallery .photos img');
-    var delayInput = document.querySelector('#delay');
+    var buttons = document.querySelectorAll('.button-action');
+    var stopBtn = document.querySelector('.button-action[data-action="stop"]');
+    var images = document.querySelectorAll('.gallery .photos img');
+    var delayInput = document.querySelector('.delay-input');
     var delay = parseInt(delayInput.value) * 1000;
     var i = 0;
     
