@@ -1,23 +1,22 @@
 html, body, ul, li{
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 .gallery{
     width: 860px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
     text-align: center;
 }
 
-.gallery .photos{
+.photos{
     position: relative;
     height: 670px;
 }
 
-.gallery .photos img{
+.photos img{
     width: 100%;
     position: absolute;
     left: 0;
@@ -26,7 +25,7 @@ html, body, ul, li{
     border-radius: 5px;
 }
 
-.gallery .photos img.showed{
+.photos img.showed{
     opacity: 1;
 }
 
