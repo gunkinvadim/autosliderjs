@@ -19,6 +19,7 @@ window.onload = function() {
     // });
 };
 
+
 function Slider(obj) {
 
     var slider = this;
@@ -33,7 +34,6 @@ function Slider(obj) {
     slider.delay = parseInt(slider.delayInput.value) * 1000;
     slider.i = 0;
     slider.action = 'stop';
-    
 
 
     slider.delayInput.onchange = function() {
