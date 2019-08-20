@@ -20,6 +20,7 @@ window.onload = function() {
 };
 
 
+
 function Slider(obj) {
 
     var slider = this;
@@ -35,46 +36,6 @@ function Slider(obj) {
     slider.i = 0;
     slider.action = 'stop';
 
-
-    slider.delayInput.onchange = function() {
-        slider.delay = parseInt(slider.delayInput.value) * 1000;
-    };
-
-    for (i = 0; i < slider.buttons.length; i++) {
-
-        slider.buttons[i].onclick = function() {
-            var buttonAction = this.getAttribute('data-action');
-            if (buttonAction == 'prev') {
-                slider.action = 'prev';
-                slider.prev();
-
-            } else if (buttonAction == 'next') {
-                slider.action = 'next';
-                slider.next();
-
-            } else if (buttonAction == 'prev-auto') {
-                slider.action = 'autoprev';
-                slider.prev(autoPrev);
-                var autoPrev = setInterval(function() {slider.prev(autoPrev, autoNext);}, slider.delay);
-        
-                slider.buttonsDisable();
-                slider.autoNextBtn.disabled = false;
-                slider.stopBtn.disabled = false;
-
-            } else if (buttonAction == 'next-auto') {
-                slider.action = 'autonext';
-                slider.next(autoNext);
-                var autoNext = setInterval(function() {slider.next(autoPrev, autoNext);}, slider.delay);
-        
-                slider.buttonsDisable();
-                slider.autoPrevBtn.disabled = false;
-                slider.stopBtn.disabled = false;
-
-            } else if (buttonAction == 'stop') {
-                slider.action = 'stop';
-            }
-        };
-    }
 
 
     slider.prev = function(autoPrev, autoNext) {
@@ -136,4 +97,47 @@ function Slider(obj) {
             slider.delayInput.disabled = false;
         }
     };
+
+
+
+    slider.delayInput.onchange = function() {
+        slider.delay = parseInt(slider.delayInput.value) * 1000;
+    };
+
+    for (i = 0; i < slider.buttons.length; i++) {
+
+        slider.buttons[i].onclick = function() {
+            var buttonAction = this.getAttribute('data-action');
+            if (buttonAction == 'prev') {
+                slider.action = 'prev';
+                slider.prev();
+
+            } else if (buttonAction == 'next') {
+                slider.action = 'next';
+                slider.next();
+
+            } else if (buttonAction == 'prev-auto') {
+                slider.action = 'autoprev';
+                slider.prev(autoPrev);
+                var autoPrev = setInterval(function() {slider.prev(autoPrev, autoNext);}, slider.delay);
+        
+                slider.buttonsDisable();
+                slider.autoNextBtn.disabled = false;
+                slider.stopBtn.disabled = false;
+
+            } else if (buttonAction == 'next-auto') {
+                slider.action = 'autonext';
+                slider.next(autoNext);
+                var autoNext = setInterval(function() {slider.next(autoPrev, autoNext);}, slider.delay);
+        
+                slider.buttonsDisable();
+                slider.autoPrevBtn.disabled = false;
+                slider.stopBtn.disabled = false;
+
+            } else if (buttonAction == 'stop') {
+                slider.action = 'stop';
+            }
+        };
+    }
+
 }
