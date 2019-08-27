@@ -101,6 +101,9 @@ function Slider(obj) {
 
 
     slider.delayInput.onchange = function() {
+        if (isNaN(slider.delayInput.value) == true || slider.delayInput.value <= 0) {
+            slider.delayInput.value = 1;
+        }
         slider.delay = parseInt(slider.delayInput.value) * 1000;
     };
 
